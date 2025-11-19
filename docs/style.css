@@ -1,97 +1,98 @@
 /* latin */
 @font-face {
-  font-family: 'Baloo';
+  font-family: "Baloo";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Baloo Regular'), local('Baloo-Regular'), url(baloo.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local("Baloo Regular"), local("Baloo-Regular"),
+    url(baloo.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 /* ------- Colors ------- */
-:root{
-  --color: #FFF8DF;
-  --background-color: #F2D7BF;
-  --shadow: #DBBA92;
-  --button-color: #DBBA92;
-  --button-background-color: #FFF8DF;
-  --button-shadow: #FCF0C4;
-  --star: #FFED90;
-  --moon-button-background-color: #231E5A;
+:root {
+  --color: #fff8df;
+  --background-color: #f2d7bf;
+  --shadow: #dbba92;
+  --button-color: #dbba92;
+  --button-background-color: #fff8df;
+  --button-shadow: #fcf0c4;
+  --star: #ffed90;
+  --moon-button-background-color: #231e5a;
   --moon-button-shadow: #030217;
-  --sun-button-background-color: #ADD3FF;
-  --sun-button-shadow: #569BEB;
-  --fur: #E49B45;
-  --fur-shadow: #C57415;
-  --face-hair: #FFBB6A;
-  --face: #FFD7A6;
+  --sun-button-background-color: #add3ff;
+  --sun-button-shadow: #569beb;
+  --fur: #e49b45;
+  --fur-shadow: #c57415;
+  --face-hair: #ffbb6a;
+  --face: #ffd7a6;
   --eyes: #363636;
   --mouth: #363636;
-  --tongue: #FFAFAF;
-  --cheeks: #FFAFAF;
+  --tongue: #ffafaf;
+  --cheeks: #ffafaf;
   --nose: #363636;
   --tear: #91a9ff;
-  --moon-light: #EBF0E1;
-  --moon-dark: #BCC1B2;
-  --moon-crater-light: #DADFD0;
-  --moon-crater-dark: #A4AB96;
-  --sun-outside: #FFE9B1;
-  --sun-middle: #FDF7E9;
-  --sun-center: #FFFFFF;
-  --fart-cloud: #A0C633;
+  --moon-light: #ebf0e1;
+  --moon-dark: #bcc1b2;
+  --moon-crater-light: #dadfd0;
+  --moon-crater-dark: #a4ab96;
+  --sun-outside: #ffe9b1;
+  --sun-middle: #fdf7e9;
+  --sun-center: #ffffff;
+  --fart-cloud: #a0c633;
   --hearts: #ff7373;
-  --cookie-light: #EEA045;
-  --cookie-dark: #E79536;
-  --cookie-chip: #7D3535;
-  --ping-pong-paddle-light: #CB2626;
-  --ping-pong-paddle-dark: #9B1010;
-  --ping-pong-paddle-handle: #BD7B55;
-  --ping-pong-ball: #FFFFFF;
-  --coffee-mug-light: #F26B41;
-  --coffee-mug-dark: #E05428;
-  --coffee-mug-steam: #FFFFFF;
-  --yarn-light: #2C58F2;
-  --yarn-medium: #1740CE;
-  --yarn-dark: #0B2DA5;
-  --yarn-needles: #7E8087;
+  --cookie-light: #eea045;
+  --cookie-dark: #e79536;
+  --cookie-chip: #7d3535;
+  --ping-pong-paddle-light: #cb2626;
+  --ping-pong-paddle-dark: #9b1010;
+  --ping-pong-paddle-handle: #bd7b55;
+  --ping-pong-ball: #ffffff;
+  --coffee-mug-light: #f26b41;
+  --coffee-mug-dark: #e05428;
+  --coffee-mug-steam: #ffffff;
+  --yarn-light: #2c58f2;
+  --yarn-medium: #1740ce;
+  --yarn-dark: #0b2da5;
+  --yarn-needles: #7e8087;
 }
 
-.fur--white{
-  --fur: #FFFFFF;
+.fur--white {
+  --fur: #ffffff;
   --fur-shadow: #ccced4;
-  --face-hair: #FFFFFF;
+  --face-hair: #ffffff;
 }
 
-[data-edit=faceColor] .color-circle{
+[data-edit="faceColor"] .color-circle {
   background-color: var(--face);
 }
 
-[data-edit=furColor] .color-circle{
+[data-edit="furColor"] .color-circle {
   background-color: var(--fur);
 }
 
-.fur--green{
+.fur--green {
   --fur: #4c475e;
   --fur-shadow: #322f3d;
   --face-hair: #9676c3;
 }
 
-.fur--default{
-
+.fur--default {
 }
 
-.face--white{
-  --face: #FFFFFF;
-  --nose: #FFAFAF;
+.face--white {
+  --face: #ffffff;
+  --nose: #ffafaf;
 }
 
-.face--green{
+.face--green {
   --face: #ffd3fd;
   --nose: #e674fd;
 }
 
-.face--default{
-
+.face--default {
 }
 
 /* ------- Base ------- */
@@ -101,7 +102,7 @@
 
 * {
   box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
 }
@@ -110,12 +111,12 @@
   display: none;
 }
 
-html{
+html {
   height: 100%;
-  font-family: 'Baloo';
+  font-family: "Baloo";
 }
 
-body{
+body {
   height: 100%;
   margin: 0;
   font-size: 10rem;
@@ -128,7 +129,336 @@ body{
   overflow: hidden;
 }
 
-.menu{
+/* Setup Page Styles */
+.setup-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.setup-container {
+  width: 100%;
+  max-width: 150rem;
+  background-color: var(--button-background-color);
+  border-radius: 3rem;
+  padding: 3rem;
+  box-shadow: -0.2rem 2rem var(--button-shadow);
+}
+
+.setup-title {
+  font-size: 6rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--button-color);
+}
+
+.setup-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group:has(textarea) {
+  grid-column: 1 / -1;
+}
+
+.setup-form .submit-button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 30rem;
+  margin-top: 0;
+}
+
+.settings-form .submit-button {
+  width: 100%;
+  max-width: none;
+}
+
+.form-group label {
+  font-size: 3rem;
+  color: var(--button-color);
+  font-weight: normal;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: "Baloo", sans-serif;
+  font-size: 2.8rem;
+  padding: 1rem 1.5rem;
+  border: 0.3rem solid #888888;
+  border-radius: 1.5rem;
+  background-color: #f5f5f5;
+  color: #333333;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #666666;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 0.3rem rgba(136, 136, 136, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 6rem;
+  max-height: 8rem;
+}
+
+.submit-button {
+  font-family: "Baloo", sans-serif;
+  font-size: 4rem;
+  padding: 1.5rem 3rem;
+  margin-top: 1rem;
+  background-color: var(--button-color);
+  color: var(--button-background-color);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: -0.2rem 1rem var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: none;
+}
+
+.submit-button:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: -0.2rem 1.2rem var(--shadow);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: -0.2rem 0.8rem var(--shadow);
+}
+
+.game-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Settings Modal */
+.settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.settings-modal-content {
+  background-color: var(--button-background-color);
+  border-radius: 3rem;
+  padding: 3rem;
+  max-width: 60rem;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: -0.2rem 2rem var(--button-shadow);
+  position: relative;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.settings-header h2 {
+  font-size: 5rem;
+  color: var(--button-color);
+  margin: 0;
+}
+
+.settings-close {
+  background: none;
+  border: none;
+  font-size: 6rem;
+  color: var(--button-color);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.settings-close:hover {
+  transform: scale(1.2);
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.restart-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.restart-modal-body p {
+  font-size: 3.5rem;
+  color: var(--button-color);
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.restart-modal-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.restart-cancel-button,
+.restart-confirm-button {
+  font-family: "Baloo", sans-serif;
+  font-size: 3.5rem;
+  padding: 1.5rem 3rem;
+  border: 0.3rem solid var(--button-color);
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 12rem;
+}
+
+.restart-cancel-button {
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+}
+
+.restart-cancel-button:hover {
+  background-color: #e8e8e8;
+  transform: translateY(-0.2rem);
+}
+
+.restart-confirm-button {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.restart-confirm-button:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  transform: translateY(-0.2rem);
+}
+
+.restart-cancel-button:active,
+.restart-confirm-button:active {
+  transform: translateY(0);
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--button-background-color);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.settings-button {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-background-color);
+  border: 0.3rem solid var(--button-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  color: var(--button-color);
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+}
+
+.settings-button:hover {
+  background-color: var(--button-color);
+  color: var(--button-background-color);
+  transform: scale(1.05);
+}
+
+.settings-button:active {
+  transform: scale(0.95);
+}
+
+.settings-button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.restart-button {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-background-color);
+  border: 0.3rem solid var(--button-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  color: var(--button-color);
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+}
+
+.restart-button:hover {
+  background-color: var(--button-color);
+  color: var(--button-background-color);
+  transform: scale(1.05);
+}
+
+.restart-button:active {
+  transform: scale(0.95);
+}
+
+.restart-button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pet-name-header {
+  font-size: 4rem;
+  color: var(--button-color);
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+
+.stage {
+  flex: 1;
+  overflow: hidden;
+}
+
+.menu {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -137,7 +467,7 @@ body{
 }
 
 .game,
-.editor{
+.editor {
   width: 35rem;
   display: flex;
   flex-wrap: wrap;
@@ -147,21 +477,21 @@ body{
 }
 
 .actions .editor,
-.actions--editing .game{
+.actions--editing .game {
   display: none;
 }
 
-.actions--editing .editor{
+.actions--editing .editor {
   display: flex;
 }
 
-.button{
+.button {
   width: 10rem;
   height: 10rem;
   padding: 1rem;
   color: var(--button-color);
   background-color: var(--button-background-color);
-  box-shadow: -.2rem 1rem var(--button-shadow);
+  box-shadow: -0.2rem 1rem var(--button-shadow);
   border-radius: 3rem;
   font-size: 5rem;
   cursor: pointer;
@@ -171,12 +501,12 @@ body{
   align-items: center;
 }
 
-.button svg{
+.button svg {
   width: 100%;
   height: 100%;
 }
 
-.button-animate{
+.button-animate {
   animation-name: button;
   animation-duration: 400ms;
   animation-timing-function: ease-in-out;
@@ -187,68 +517,68 @@ body{
   animation-play-state: paused;
 }
 
-.performing .button-action--awake{
+.performing .button-action--awake {
   display: none;
 }
 
-.performing .button-action--sleep{
+.performing .button-action--sleep {
   display: none;
 }
 
-.button-action--awake .button{
+.button-action--awake .button {
   background-color: var(--sun-button-background-color);
-  box-shadow: -.2rem 1rem var(--sun-button-shadow);
+  box-shadow: -0.2rem 1rem var(--sun-button-shadow);
 }
 
-.button-action--sleep .button{
+.button-action--sleep .button {
   background-color: var(--moon-button-background-color);
-  box-shadow: -.2rem 1rem var(--moon-button-shadow);
+  box-shadow: -0.2rem 1rem var(--moon-button-shadow);
 }
 
-.color-circle{
-  border: .4rem solid #969696;
+.color-circle {
+  border: 0.4rem solid #969696;
   width: 4rem;
   height: 4rem;
   border-radius: 100%;
 }
 
-.active{
+.active {
   animation-play-state: running;
 }
 
-.button-animate:nth-child(1) .button{
+.button-animate:nth-child(1) .button {
   transform: rotate(5deg);
 }
 
-.button-animate:nth-child(2) .button{
+.button-animate:nth-child(2) .button {
   transform: rotate(-5deg);
 }
 
-.button-animate:nth-child(3) .button{
+.button-animate:nth-child(3) .button {
   transform: rotate(8deg);
 }
 
-.button-animate:nth-child(4) .button{
+.button-animate:nth-child(4) .button {
   transform: rotate(-3deg);
 }
 
-.button-animate:nth-child(5) .button{
+.button-animate:nth-child(5) .button {
   transform: rotate(8deg);
 }
 
-.button-animate:nth-child(6) .button{
+.button-animate:nth-child(6) .button {
   transform: rotate(-5deg);
 }
 
-.game .button-animate:nth-child(2) .button{
+.game .button-animate:nth-child(2) .button {
   transform: rotate(5deg);
 }
 
-.editor .button-animate:nth-child(5){
+.editor .button-animate:nth-child(5) {
   margin-right: 12.5rem;
 }
 
-.debug{
+.debug {
   display: block;
   position: fixed;
   top: 0;
@@ -260,7 +590,7 @@ body{
   font-size: 16px;
 }
 
-.debug-stat{
+.debug-stat {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -293,11 +623,11 @@ progress::-moz-progress-bar {
   border-radius: 1rem;
 }
 
-.debug label{
+.debug label {
   padding: 1rem;
 }
 
-.stage{
+.stage {
   height: 100%;
   display: flex;
   align-items: center;
@@ -305,38 +635,59 @@ progress::-moz-progress-bar {
   flex-direction: column;
 }
 
-.canvas{
+.canvas {
   width: calc(25rem * 1.5);
   height: calc(30rem * 1.5);
   position: relative;
 }
 
-.canvas svg{
+.canvas svg {
   width: 100%;
   height: 100%;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-.controls{
+.controls {
   display: flex;
   font-size: 6rem;
+  align-items: center;
+  gap: 2rem;
 }
 
-.score{
+.pet-name {
+  font-size: 5rem;
+  color: var(--color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  background-color: var(--button-background-color);
+  box-shadow: -0.2rem 0.5rem var(--button-shadow);
+  transition: transform 0.2s ease;
+}
+
+.pet-name:hover {
+  transform: scale(1.05);
+}
+
+.pet-name:active {
+  transform: scale(0.95);
+}
+
+.score {
   display: flex;
   justify-content: center;
 }
 
-.score svg{
+.score svg {
   width: 8.5rem;
   height: 8.5rem;
 }
 
 /* ------- Rig ------- */
-.rig, .armature{
+.rig,
+.armature {
   position: absolute;
   left: 0;
   top: 0;
@@ -344,51 +695,51 @@ progress::-moz-progress-bar {
   height: 100%;
 }
 
-.armature{
+.armature {
   transition: transform 1s ease-in-out;
 }
 
 .armature-right-hand,
 .armature-paddle,
-.armature-right-needle{
+.armature-right-needle {
   transform-origin: calc(4.7rem * 1.5) calc(17.8rem * 1.5);
 }
 
 .armature-left-hand,
 .armature-cookie,
-.armature-left-needle{
+.armature-left-needle {
   transform-origin: calc(20.2rem * 1.5) calc(17.8rem * 1.5);
 }
 
-.armature-right-foot{
+.armature-right-foot {
   transform-origin: calc(8.1rem * 1.5) calc(23.6rem * 1.5);
 }
 
-.armature-left-foot{
+.armature-left-foot {
   transform-origin: calc(17.1rem * 1.5) calc(23.6rem * 1.5);
 }
 
-.armature-feet{
+.armature-feet {
   transform-origin: calc(12.4rem * 1.5) calc(23.6rem * 1.5);
 }
 
-.armature-shadow{
+.armature-shadow {
   transform-origin: calc(12.4rem * 1.5) calc(26rem * 1.5);
 }
 
-.armature-face{
+.armature-face {
   transform-origin: calc(12.4rem * 1.5) calc(15rem * 1.5);
 }
 
-.armature-left-tear{
+.armature-left-tear {
   transform-origin: calc(17.4rem * 1.5) calc(15.3rem * 1.5);
 }
 
-.armature-right-cloud{
+.armature-right-cloud {
   transform-origin: calc(9rem * 1.5) calc(9.6rem * 1.5);
 }
 
-.rig-icons{
+.rig-icons {
   display: none;
 }
 
@@ -399,67 +750,67 @@ progress::-moz-progress-bar {
 .rig-cookie .armature-display,
 .rig-moon .armature-display,
 .rig-hearts .armature-display,
-.rig-clouds .armature-display{
+.rig-clouds .armature-display {
   opacity: 0;
 }
 
-.rig-accessories .armature-display{
+.rig-accessories .armature-display {
   opacity: 0;
 }
 
-.body--fur .rig-accessories .armature-hair-body{
+.body--fur .rig-accessories .armature-hair-body {
   opacity: 1;
 }
 
-.face--fur .rig-accessories .armature-hair-face{
+.face--fur .rig-accessories .armature-hair-face {
   opacity: 1;
 }
 
-.ears--small .rig-accessories .armature-ears-small{
+.ears--small .rig-accessories .armature-ears-small {
   opacity: 1;
 }
 
-.ears--medium .rig-accessories .armature-ears-medium{
+.ears--medium .rig-accessories .armature-ears-medium {
   opacity: 1;
 }
 
-.ears--big .rig-accessories .armature-ears-big{
+.ears--big .rig-accessories .armature-ears-big {
   opacity: 1;
 }
 
-.nose--round .armature-nose-round{
+.nose--round .armature-nose-round {
   opacity: 1;
 }
 
-.nose--triangle .armature-nose-triangle{
+.nose--triangle .armature-nose-triangle {
   opacity: 1;
 }
 
-.rig-shadow{
+.rig-shadow {
   fill: var(--shadow);
 }
 
-.rig-hearts{
+.rig-hearts {
   fill: var(--hearts);
 }
 
-.rig-clouds{
+.rig-clouds {
   fill: var(--fart-cloud);
 }
 
-.rig-moon [id=moonDark]{
+.rig-moon [id="moonDark"] {
   fill: var(--moon-dark);
 }
 
-.rig-moon [id=moonLight]{
+.rig-moon [id="moonLight"] {
   fill: var(--moon-light);
 }
 
-.rig-moon [id=craterDark]{
+.rig-moon [id="craterDark"] {
   fill: var(--moon-crater-dark);
 }
 
-.rig-moon [id=craterLight]{
+.rig-moon [id="craterLight"] {
   fill: var(--moon-crater-light);
 }
 
@@ -467,168 +818,168 @@ progress::-moz-progress-bar {
   fill: var(--eyes);
 }
 
-.rig-nose{
+.rig-nose {
   fill: var(--nose);
 }
 
-.rig-face .svg-face{
+.rig-face .svg-face {
   fill: var(--face);
 }
 
-.svg-body{
+.svg-body {
   fill: var(--fur);
 }
 
-.rig-accessories{
+.rig-accessories {
   fill: var(--fur);
 }
 
-.rig-accessories .svg-hair-face{
+.rig-accessories .svg-hair-face {
   fill: var(--face-hair);
 }
 
-.rig-feet{
+.rig-feet {
   fill: var(--fur);
 }
 
-.rig-cookie [id=cookieLight]{
+.rig-cookie [id="cookieLight"] {
   fill: var(--cookie-light);
 }
 
-.rig-cookie [id=cookieDark]{
+.rig-cookie [id="cookieDark"] {
   fill: var(--cookie-dark);
 }
 
-.svg-left-tear{
+.svg-left-tear {
   fill: var(--tear);
 }
 
-.rig-cookie [id=chips]{
+.rig-cookie [id="chips"] {
   fill: var(--cookie-chip);
 }
 
-.rig-ping-pong [id^=face]{
+.rig-ping-pong [id^="face"] {
   fill: var(--ping-pong-paddle-light);
 }
 
-.rig-ping-pong [id=side]{
+.rig-ping-pong [id="side"] {
   fill: var(--ping-pong-paddle-dark);
 }
 
-.rig-ping-pong [id=handle]{
+.rig-ping-pong [id="handle"] {
   fill: var(--ping-pong-paddle-handle);
 }
 
-.svg-ball{
+.svg-ball {
   fill: var(--ping-pong-ball);
 }
 
-.rig-yarn{
+.rig-yarn {
   fill: var(--yarn-light);
 }
 
-.svg-middle-yarn{
+.svg-middle-yarn {
   fill: var(--yarn-medium);
 }
 
-.rig-yarn-ball  [id=yarnBallRight]{
+.rig-yarn-ball [id="yarnBallRight"] {
   fill: var(--yarn-medium);
 }
 
-.rig-yarn-ball  [id=yarnBallBottom]{
+.rig-yarn-ball [id="yarnBallBottom"] {
   fill: var(--yarn-dark);
 }
 
-.rig-yarn-ball [id=yarnBallTail]{
+.rig-yarn-ball [id="yarnBallTail"] {
   fill: var(--yarn-dark);
 }
 
 .svg-right-needle,
-.svg-left-needle{
+.svg-left-needle {
   fill: var(--yarn-needles);
 }
 
-.rig-mug{
+.rig-mug {
   fill: var(--coffee-mug-light);
 }
 
-.rig-steam{
+.rig-steam {
   fill: var(--coffee-mug-steam);
 }
 
-.rig-mug [id^=shadow]{
+.rig-mug [id^="shadow"] {
   fill: var(--coffee-mug-dark);
 }
 
-.svg-inside-mug{
+.svg-inside-mug {
   fill: var(--coffee-mug-dark);
 }
 
-.rig-hands{
+.rig-hands {
   fill: var(--fur-shadow);
 }
 
-.svg-cheeks-happy{
+.svg-cheeks-happy {
   fill: var(--cheeks);
 }
 
-.svg-big-smile [id=bigSmileTongue]{
+.svg-big-smile [id="bigSmileTongue"] {
   fill: var(--tongue);
 }
 
-.svg-side-tongue [id=tongue]{
+.svg-side-tongue [id="tongue"] {
   fill: var(--tongue);
 }
 
 /* ------- Animations ------- */
 .rig--happy .armature-eyes-open.armature-display,
-.rig--happy .armature-small-smile.armature-display{
+.rig--happy .armature-small-smile.armature-display {
   opacity: 1;
 }
 
 .rig--pain .armature-eyes-wincing-big.armature-display,
-.rig--pain .armature-big-frown.armature-display{
+.rig--pain .armature-big-frown.armature-display {
   opacity: 1;
 }
 
 .rig--frustration .armature-eyes-wincing-small.armature-display,
 .rig--frustration .armature-medium-frown.armature-display,
-.rig--frustration .armature-eyebrows-big-up.armature-display{
+.rig--frustration .armature-eyebrows-big-up.armature-display {
   opacity: 1;
 }
 
 .rig--tired .armature-eyes-closed.armature-display,
 .rig--tired .armature-medium.armature-display,
-.rig--tired .armature-eyebrows-small-up.armature-display{
+.rig--tired .armature-eyebrows-small-up.armature-display {
   opacity: 1;
 }
 
 .rig--restless .armature-eyes-concentrated.armature-display,
 .rig--restless .armature-small.armature-display,
-.rig--restless .armature-eyebrows-serious.armature-display{
+.rig--restless .armature-eyebrows-serious.armature-display {
   opacity: 1;
 }
 
 .rig--sad .armature-eyes-closed.armature-display,
 .rig--sad .armature-small-frown.armature-display,
-.rig--sad .armature-eyebrows-small-up.armature-display{
+.rig--sad .armature-eyebrows-small-up.armature-display {
   opacity: 1;
 }
 
 .rig--ecstatic .armature-eyes-happy-closed.armature-display,
 .rig--ecstatic .armature-big-smile.armature-display,
-.rig--ecstatic .armature-cheeks-happy.armature-display{
+.rig--ecstatic .armature-cheeks-happy.armature-display {
   opacity: 1;
 }
 
 .rig--bathroom .armature-eyes-wincing-big.armature-display,
-.rig--bathroom .armature-grimmice.armature-display{
+.rig--bathroom .armature-grimmice.armature-display {
   opacity: 1;
 }
 
 .rig--sleep .armature-eyes-closed.armature-display,
 .rig--sleep .armature-medium.armature-display,
-.rig--sleep .rig-moon .armature-display{
+.rig--sleep .rig-moon .armature-display {
   opacity: 1;
 }
 
@@ -637,50 +988,50 @@ progress::-moz-progress-bar {
 .rig--sleep .armature-hair-body.armature-rotate,
 .rig--sleep .armature-ears-small.armature-rotate,
 .rig--sleep .armature-ears-medium.armature-rotate,
-.rig--sleep .armature-ears-big.armature-rotate{
+.rig--sleep .armature-ears-big.armature-rotate {
   transform: rotate(-10deg);
 }
 
-.rig--sleep .armature-hands.armature-rotate{
+.rig--sleep .armature-hands.armature-rotate {
   transform: rotate(-5deg);
   transition-delay: 200ms;
 }
 
 .rig--play .armature-eyes-concentrated.armature-display,
 .rig--play .armature-side-tongue.armature-display,
-.rig--play .rig-ping-pong .armature-display{
+.rig--play .rig-ping-pong .armature-display {
   opacity: 1;
 }
 
 .rig--relax .armature-eyes-happy-closed.armature-display,
 .rig--relax .armature-small-smile.armature-display,
-.rig--relax .rig-mug .armature-display{
+.rig--relax .rig-mug .armature-display {
   opacity: 1;
 }
 
 .rig--create .armature-eyes-open.armature-display,
 .rig--create .armature-small-smile.armature-display,
-.rig--create .rig-yarn .armature-display{
+.rig--create .rig-yarn .armature-display {
   opacity: 1;
 }
 
 .rig--eat .armature-eyes-closed.armature-display,
 .rig--eat .armature-big-smile.armature-display,
-.rig--eat .rig-cookie .armature-display{
+.rig--eat .rig-cookie .armature-display {
   opacity: 1;
 }
 
-.rig-moon .armature-translate{
+.rig-moon .armature-translate {
   transition: transform 800ms;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateX(6rem) translateY(4rem);
 }
 
-.rig--sleep .rig-moon .armature-translate{
+.rig--sleep .rig-moon .armature-translate {
   transform: translateX(0) translateY(0);
 }
 
-.rig--ecstatic .armature-hearts.armature-display{
+.rig--ecstatic .armature-hearts.armature-display {
   animation-name: fadeIn;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
@@ -691,7 +1042,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--ecstatic .armature-hearts .armature-translate{
+.rig--ecstatic .armature-hearts .armature-translate {
   animation-name: slideUp;
   animation-duration: 3s;
   animation-timing-function: ease-in;
@@ -702,7 +1053,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--bathroom .armature-clouds.armature-display{
+.rig--bathroom .armature-clouds.armature-display {
   animation-name: fadeIn;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
@@ -713,7 +1064,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--bathroom .armature-clouds .armature-translate{
+.rig--bathroom .armature-clouds .armature-translate {
   animation-name: slideUp;
   animation-duration: 3s;
   animation-timing-function: ease-in;
@@ -724,7 +1075,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--bathroom .armature-right-cloud.armature-rotate{
+.rig--bathroom .armature-right-cloud.armature-rotate {
   animation-name: littleSpin;
   animation-duration: 3s;
   animation-timing-function: ease-in;
@@ -735,7 +1086,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--bathroom .rig-body .armature-translate{
+.rig--bathroom .rig-body .armature-translate {
   animation-name: strain;
   animation-duration: 1.5s;
   animation-timing-function: ease-in;
@@ -746,7 +1097,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--sad .armature-left-tear.armature-display{
+.rig--sad .armature-left-tear.armature-display {
   animation-name: fadeIn;
   animation-duration: 3s;
   animation-timing-function: ease-out;
@@ -757,7 +1108,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--sad .armature-left-tear.armature-translate{
+.rig--sad .armature-left-tear.armature-translate {
   animation-name: slideDown;
   animation-duration: 3s;
   animation-timing-function: ease-in;
@@ -768,7 +1119,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--sad .armature-left-tear.armature-scale{
+.rig--sad .armature-left-tear.armature-scale {
   animation-name: scaleUp;
   animation-duration: 3s;
   animation-timing-function: ease-out;
@@ -785,7 +1136,7 @@ progress::-moz-progress-bar {
 .rig--restless .armature-ears-small.armature-rotate,
 .rig--restless .armature-ears-medium.armature-rotate,
 .rig--restless .armature-ears-big.armature-rotate,
-.rig--restless .armature-hands.armature-rotate{
+.rig--restless .armature-hands.armature-rotate {
   animation-name: tilt;
   animation-duration: 5s;
   animation-timing-function: ease-out;
@@ -796,7 +1147,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--restless .armature-left-foot.armature-translate{
+.rig--restless .armature-left-foot.armature-translate {
   animation-name: shiftLeft;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
@@ -807,7 +1158,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--restless .armature-right-foot.armature-translate{
+.rig--restless .armature-right-foot.armature-translate {
   animation-name: shiftRight;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
@@ -818,7 +1169,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--restless .armature-left-foot.armature-rotate{
+.rig--restless .armature-left-foot.armature-rotate {
   animation-name: rotateLeft;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
@@ -829,7 +1180,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--restless .armature-right-foot.armature-rotate{
+.rig--restless .armature-right-foot.armature-rotate {
   animation-name: rotateRight;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
@@ -840,7 +1191,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.armature-eyebrows-big-up.armature-translate{
+.armature-eyebrows-big-up.armature-translate {
   transform-origin: center;
   animation-name: wince;
   animation-duration: 7s;
@@ -852,7 +1203,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--idle .rig--happy .armature-eyes-open.armature-display{
+.rig--idle .rig--happy .armature-eyes-open.armature-display {
   animation-name: blinkOut;
   animation-duration: 6s;
   animation-timing-function: linear;
@@ -863,7 +1214,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--idle .rig--happy .armature-eyes-closed.armature-display{
+.rig--idle .rig--happy .armature-eyes-closed.armature-display {
   animation-name: blinkIn;
   animation-duration: 6s;
   animation-timing-function: linear;
@@ -874,7 +1225,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--idle .armature-body.armature-translate{
+.rig--idle .armature-body.armature-translate {
   transform-origin: center;
   animation-name: float;
   animation-duration: 3s;
@@ -886,7 +1237,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--idle .armature-shadow.armature-scale{
+.rig--idle .armature-shadow.armature-scale {
   animation-name: floatShadow;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
@@ -897,7 +1248,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--idle .armature-hair-face.armature-translate{
+.rig--idle .armature-hair-face.armature-translate {
   transform-origin: center;
   animation-name: float;
   animation-duration: 3s;
@@ -912,7 +1263,7 @@ progress::-moz-progress-bar {
 .rig--idle .armature-hair-body.armature-translate,
 .rig--idle .armature-ears-small.armature-translate,
 .rig--idle .armature-ears-big.armature-translate,
-.rig--idle .armature-ears-medium.armature-translate{
+.rig--idle .armature-ears-medium.armature-translate {
   transform-origin: center;
   animation-name: float;
   animation-duration: 3s;
@@ -926,7 +1277,7 @@ progress::-moz-progress-bar {
 
 .rig--idle .armature-left-hand.armature-translate,
 .rig--idle .armature-right-hand.armature-translate,
-.rig--idle .armature-mug.armature-translate{
+.rig--idle .armature-mug.armature-translate {
   transform-origin: center;
   animation-name: float;
   animation-duration: 3s;
@@ -959,7 +1310,7 @@ progress::-moz-progress-bar {
 .rig--eat .armature-left-hand.armature-translate,
 .rig--eat .armature-right-hand.armature-translate,
 .rig--eat .armature-mug.armature-translate,
-.rig--eat .armature-cookie.armature-translate{
+.rig--eat .armature-cookie.armature-translate {
   transform-origin: center;
   animation-name: eatJiggle;
   animation-duration: 1s;
@@ -972,7 +1323,7 @@ progress::-moz-progress-bar {
 }
 
 .rig--eat .armature-cookie.armature-rotate,
-.rig--eat .armature-left-hand.armature-rotate{
+.rig--eat .armature-left-hand.armature-rotate {
   animation-name: eatCookie;
   animation-duration: 4s;
   animation-timing-function: ease-in;
@@ -983,7 +1334,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--eat .armature-big-smile.armature-scale{
+.rig--eat .armature-big-smile.armature-scale {
   animation-name: mouthClose;
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -995,18 +1346,18 @@ progress::-moz-progress-bar {
 }
 /* end eat */
 
-.rig--idle .armature-eyes-open.armature-translate{
+.rig--idle .armature-eyes-open.armature-translate {
   animation-name: leftRight;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-fill-mode: none;
   animation-play-state: running;
 }
 
-.rig--shake .armature-face.armature-translate{
+.rig--shake .armature-face.armature-translate {
   animation-name: shake;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -1017,7 +1368,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--shake .armature-face.armature-scale{
+.rig--shake .armature-face.armature-scale {
   animation-name: shakeSquish;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
@@ -1029,22 +1380,22 @@ progress::-moz-progress-bar {
 }
 
 .rig--play .armature-paddle.armature-rotate,
-.rig--play .armature-right-hand.armature-rotate{
+.rig--play .armature-right-hand.armature-rotate {
   animation-name: playPaddle;
   animation-duration: 1s;
   animation-timing-function: ease-in;
-  animation-delay: -.4s;
+  animation-delay: -0.4s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-fill-mode: none;
   animation-play-state: running;
 }
 
-.rig--play .armature-ball.armature-translate{
+.rig--play .armature-ball.armature-translate {
   /* transform: translateY(-15rem); */
   animation-name: playBall;
   animation-duration: 1s;
-  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   animation-delay: 0s;
   animation-iteration-count: infinite;
   animation-direction: normal;
@@ -1053,7 +1404,7 @@ progress::-moz-progress-bar {
 }
 
 .rig--create .armature-left-needle.armature-rotate,
-.rig--create .armature-left-hand.armature-rotate{
+.rig--create .armature-left-hand.armature-rotate {
   animation-name: knitLeft;
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -1065,19 +1416,19 @@ progress::-moz-progress-bar {
 }
 
 .rig--create .armature-right-needle.armature-rotate,
-.rig--create .armature-right-hand.armature-rotate{
+.rig--create .armature-right-hand.armature-rotate {
   transform: rotate(-5deg);
   animation-name: knitRight;
   animation-duration: 1s;
   animation-timing-function: ease-in;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-fill-mode: none;
   animation-play-state: running;
 }
 
-.rig--create .armature-middle-yarn.armature-rotate{
+.rig--create .armature-middle-yarn.armature-rotate {
   animation-name: knit;
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -1088,7 +1439,7 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--create .armature-left-yarn.armature-translate{
+.rig--create .armature-left-yarn.armature-translate {
   animation-name: upAndDown;
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -1099,11 +1450,11 @@ progress::-moz-progress-bar {
   animation-play-state: running;
 }
 
-.rig--create .armature-right-yarn.armature-translate{
+.rig--create .armature-right-yarn.armature-translate {
   animation-name: upAndDown;
   animation-duration: 1s;
   animation-timing-function: ease-in;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-fill-mode: none;
@@ -1112,445 +1463,445 @@ progress::-moz-progress-bar {
 
 /* ------- Keyframes ------- */
 @keyframes button {
-  0%{
+  0% {
     transform: scale(1);
   }
-  30%{
-    transform: scale(.9);
+  30% {
+    transform: scale(0.9);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }
 
 @keyframes float {
-  0%{
+  0% {
     transform: translateY(0);
   }
-  42%{
-    transform: translateY(.77rem);
+  42% {
+    transform: translateY(0.77rem);
   }
-  100%{
+  100% {
     transform: translateY(0);
   }
 }
 
 @keyframes floatShadow {
-  0%{
+  0% {
     transform: scale(1);
   }
-  42%{
+  42% {
     transform: scale(0.9);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }
 
 @keyframes blinkIn {
-  12%{
+  12% {
     opacity: 0;
   }
-  13%{
+  13% {
     opacity: 1;
   }
-  14%{
+  14% {
     opacity: 1;
   }
-  15%{
+  15% {
     opacity: 0;
   }
-  40%{
+  40% {
     opacity: 0;
   }
-  41%{
+  41% {
     opacity: 1;
   }
-  42%{
+  42% {
     opacity: 1;
   }
-  43%{
+  43% {
     opacity: 0;
   }
 }
 
 @keyframes blinkOut {
-  12%{
+  12% {
     opacity: 1;
   }
-  13%{
+  13% {
     opacity: 0;
   }
-  14%{
+  14% {
     opacity: 0;
   }
-  15%{
+  15% {
     opacity: 1;
   }
-  40%{
+  40% {
     opacity: 1;
   }
-  41%{
+  41% {
     opacity: 0;
   }
-  42%{
+  42% {
     opacity: 0;
   }
-  43%{
+  43% {
     opacity: 1;
   }
 }
 
 @keyframes wince {
-  0%{
+  0% {
     transform: translateY(0);
   }
-  42%{
+  42% {
     transform: translateY(0);
   }
-  50%{
-    transform: translateY(.6rem);
+  50% {
+    transform: translateY(0.6rem);
   }
-  80%{
-    transform: translateY(.6rem);
+  80% {
+    transform: translateY(0.6rem);
   }
-  90%{
+  90% {
     transform: translateY(0);
   }
 }
 
 @keyframes leftRight {
-  0%{
+  0% {
     transform: translateX(0);
   }
-  29%{
+  29% {
     transform: translateX(0);
   }
-  30%{
-    transform: translateY(-.2rem) translateX(.2rem);
+  30% {
+    transform: translateY(-0.2rem) translateX(0.2rem);
   }
-  38%{
-    transform: translateY(-.2rem) translateX(.2rem);
+  38% {
+    transform: translateY(-0.2rem) translateX(0.2rem);
   }
-  40%{
-    transform: translateY(-.2rem) translateX(-.2rem);
+  40% {
+    transform: translateY(-0.2rem) translateX(-0.2rem);
   }
-  50%{
-    transform: translateY(-.2rem) translateX(-.2rem);
+  50% {
+    transform: translateY(-0.2rem) translateX(-0.2rem);
   }
-  52%{
+  52% {
     transform: translateY(0);
   }
 }
 
 @keyframes shake {
-  0%{
+  0% {
     transform: translateX(0);
   }
-  25%{
-    transform: translateX(-.4rem);
+  25% {
+    transform: translateX(-0.4rem);
   }
-  50%{
-    transform: translateX(.4rem);
+  50% {
+    transform: translateX(0.4rem);
   }
-  75%{
-    transform: translateX(-.4rem);
+  75% {
+    transform: translateX(-0.4rem);
   }
-  100%{
+  100% {
     transform: translateX(0) translateY(0);
   }
 }
 
 @keyframes shakeSquish {
-  0%{
+  0% {
     transform: scaleY(1);
   }
-  15%{
+  15% {
     transform: scaleY(1.04);
   }
-  65%{
+  65% {
     transform: scaleY(1.04);
   }
-  100%{
+  100% {
     transform: scaleY(1);
   }
 }
 
 @keyframes tilt {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  34%{
+  34% {
     transform: rotate(0);
   }
-  42%{
+  42% {
     transform: rotate(-3deg);
   }
-  62%{
+  62% {
     transform: rotate(3deg);
   }
-  72%{
+  72% {
     transform: rotate(0);
   }
-  100%{
+  100% {
     transform: rotate(0);
   }
 }
 
 @keyframes shiftLeft {
-  0%{
+  0% {
     transform: translateY(0);
   }
-  34%{
+  34% {
     transform: translateY(0);
   }
-  42%{
-    transform: translateY(-.5rem);
+  42% {
+    transform: translateY(-0.5rem);
   }
-  52%{
+  52% {
     transform: translateY(0);
   }
-  100%{
+  100% {
     transform: translateY(0);
   }
 }
 
 @keyframes shiftRight {
-  0%{
+  0% {
     transform: translateY(0);
   }
-  50%{
+  50% {
     transform: translateY(0);
   }
-  62%{
-    transform: translateY(-.5rem);
+  62% {
+    transform: translateY(-0.5rem);
   }
-  72%{
+  72% {
     transform: translateY(0);
   }
-  100%{
+  100% {
     transform: translateY(0);
   }
 }
 
 @keyframes rotateLeft {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  30%{
+  30% {
     transform: rotate(0);
   }
-  42%{
+  42% {
     transform: rotate(-10deg);
   }
-  52%{
+  52% {
     transform: rotate(0);
   }
-  100%{
+  100% {
     transform: rotate(0);
   }
 }
 
 @keyframes rotateRight {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  50%{
+  50% {
     transform: rotate(0);
   }
-  62%{
+  62% {
     transform: rotate(10deg);
   }
-  72%{
+  72% {
     transform: rotate(0);
   }
-  100%{
+  100% {
     transform: rotate(0);
   }
 }
 
 @keyframes fadeIn {
-  0%{
+  0% {
     opacity: 0;
   }
-  20%{
+  20% {
     opacity: 1;
   }
-  96%{
-    opacity:  1;
+  96% {
+    opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
   }
 }
 
 @keyframes slideDown {
-  0%{
+  0% {
     transform: translateY(-1rem);
   }
-  100%{
+  100% {
     transform: translateY(1.5rem);
   }
 }
 
 @keyframes scaleUp {
-  0%{
+  0% {
     transform: scale(0);
   }
-  40%{
+  40% {
     transform: scale(1);
   }
 }
 
 @keyframes slideUp {
-  0%{
+  0% {
     transform: translateY(2rem);
   }
-  100%{
+  100% {
     transform: translateY(-2rem);
   }
 }
 
-@keyframes strain{
-  0%{
-    transform: translateX(.1rem) translateY(.1rem);
+@keyframes strain {
+  0% {
+    transform: translateX(0.1rem) translateY(0.1rem);
   }
-  34%{
-    transform: translateX(-.1rem) translateY(-.1rem);
+  34% {
+    transform: translateX(-0.1rem) translateY(-0.1rem);
   }
-  42%{
-    transform: translateX(.1rem) translateY(.1rem);
+  42% {
+    transform: translateX(0.1rem) translateY(0.1rem);
   }
-  62%{
-    transform: translateX(-.1rem) translateY(-.1rem);
+  62% {
+    transform: translateX(-0.1rem) translateY(-0.1rem);
   }
-  72%{
-    transform: translateX(.1rem) translateY(.1rem);
+  72% {
+    transform: translateX(0.1rem) translateY(0.1rem);
   }
-  100%{
-    transform: translateX(-.1rem) translateY(-.1rem);
+  100% {
+    transform: translateX(-0.1rem) translateY(-0.1rem);
   }
 }
 
-@keyframes playPaddle{
-  0%{
+@keyframes playPaddle {
+  0% {
     transform: rotate(-40deg);
   }
-  50%{
+  50% {
     transform: rotate(5deg);
   }
-  100%{
+  100% {
     transform: rotate(-40deg);
   }
 }
 
-@keyframes playBall{
-  0%{
+@keyframes playBall {
+  0% {
     transform: translateY(-15rem);
   }
-  50%{
+  50% {
     transform: translateY(-3rem);
   }
-  100%{
+  100% {
     transform: translateY(-15rem);
   }
 }
 
 @keyframes eatJiggle {
-  0%{
+  0% {
     transform: translateY(0);
   }
-  40%{
-    transform: translateY(.5rem);
+  40% {
+    transform: translateY(0.5rem);
   }
-  90%{
+  90% {
     transform: translateY(0);
   }
-  100%{
+  100% {
     transform: translateY(0);
   }
 }
 
-@keyframes eatCookie{
-  0%{
+@keyframes eatCookie {
+  0% {
     transform: rotate(-25deg);
   }
-  10%{
+  10% {
     transform: rotate(14deg);
   }
-  90%{
+  90% {
     transform: rotate(14deg);
   }
-  100%{
+  100% {
     transform: rotate(-25deg);
   }
 }
 
 @keyframes mouthClose {
-  0%{
+  0% {
     transform: scaleY(1);
   }
-  50%{
-    transform: scaleY(.5);
+  50% {
+    transform: scaleY(0.5);
   }
-  100%{
+  100% {
     transform: scaleY(1);
   }
 }
 
 @keyframes knitLeft {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  50%{
+  50% {
     transform: rotate(-5deg);
   }
-  100%{
+  100% {
     transform: rotate(0);
   }
 }
 
 @keyframes knitRight {
-  0%{
+  0% {
     transform: rotate(-5deg);
   }
-  50%{
+  50% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(-5deg);
   }
 }
 
 @keyframes knit {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  50%{
+  50% {
     transform: rotate(8deg);
   }
-  100%{
+  100% {
     transform: rotate(0);
   }
 }
 
 @keyframes upAndDown {
-  0%{
+  0% {
     transform: translateY(0rem);
   }
-  50%{
-    transform: translateY(.75rem);
+  50% {
+    transform: translateY(0.75rem);
   }
-  100%{
+  100% {
     transform: translateY(0rem);
   }
 }
 
 @keyframes littleSpin {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  100%{
+  100% {
     transform: rotate(25deg);
   }
 }

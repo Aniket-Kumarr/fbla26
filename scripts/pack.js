@@ -7,7 +7,6 @@ const SOURCE_FILE = '../assets/rigFull.svg';
 const OUTPUT_FILE = `../docs/svg.js`;
 
 function pack(){
-  console.log(`packing ${new Date().toLocaleTimeString('en-US')}...`)
   puppeteer
     .launch()
     .then(browser => {

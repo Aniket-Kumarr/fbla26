@@ -306,6 +306,11 @@ class Observe extends Action{
 }
 class Creature{
   constructor(creature = {}){
+    this.name = creature.name || '';
+    this.birthDate = creature.birthDate || '';
+    this.personality = creature.personality || '';
+    this.furColor = creature.furColor || 'default';
+    this.faceColor = creature.faceColor || 'default';
     this.actions = creature.actions ? creature.actions.map(a => new actions[a.type](a)) : [];
     this.moods = creature.moods || {};
     this.mood = creature.mood || 'happy';
@@ -318,7 +323,7 @@ class Creature{
 
 class UI{
   constructor(ui = {}){
-    this.stage = document.querySelector('.stage');
+    this.stage = document.querySelector('#game-page .stage');
     this.editing = false;
     if(ui.editorOptionsSelectedIndex){
       this.editorOptionsSelectedIndex = ui.editorOptionsSelectedIndex;
@@ -718,11 +723,23 @@ function isDebug(w){
 
 // -------- Services ---------
 function init(state){
-  state.creature = new Creature(state.creature);
-  state.game = new Game(state.game);
-  state.ui = new UI(state.ui);
+  // Check if pet is already set up
+  const savedState = getState(STATE);
+  const isPetSetUp = savedState.creature && savedState.creature.name && savedState.creature.birthDate;
+  
+  if (!isPetSetUp) {
+    // Show setup page
+    showSetupPage();
+    return;
+  }
+  
+  // Pet is set up, show game
+  state.creature = new Creature(savedState.creature);
+  state.game = new Game(savedState.game || {});
+  state.ui = new UI(savedState.ui || {});
   state.canvas = new Canvas();
-  state.sound = true;
+  state.sound = savedState.sound !== undefined ? savedState.sound : true;
+  showGamePage();
   initCanvas(state);
   initUI(state);
   initGame(state);
@@ -764,11 +781,27 @@ function initUI(state){
     updateUI(state);
   });
   editableOptionKeys.forEach(k => toggleEditableClasses(state, k, -1));
+  
+  // Apply saved color choices
+  if (state.creature.furColor && state.creature.furColor !== 'default') {
+    state.ui.stage.classList.add(`fur--${state.creature.furColor}`);
+  }
+  if (state.creature.faceColor && state.creature.faceColor !== 'default') {
+    state.ui.stage.classList.add(`face--${state.creature.faceColor}`);
+  }
+  
   state.score = document.querySelector('.score');
   const span = document.createElement('span');
   state.scoreValue = span;
   state.score.appendChild(span);
   state.score.appendChild(createSvgIcon('symbol-star-icon'));
+  
+  // Initialize pet name in header
+  state.petNameHeaderElement = document.querySelector('.pet-name-header');
+  updatePetNameDisplay(state);
+  
+  // Initialize settings modal
+  initSettingsModal(state);
 }
 
 function changeSelectedEditorOption(state, editableOption){
@@ -1227,12 +1260,230 @@ function createSvgIcon(name){
   return svg;
 }
 
+function showSetupPage(){
+  const setupPage = document.getElementById('setup-page');
+  const gamePage = document.getElementById('game-page');
+  if (setupPage) setupPage.classList.remove('hide');
+  if (gamePage) gamePage.classList.add('hide');
+  
+  // Set default birth date to today
+  const birthDateInput = document.getElementById('birth-date');
+  if (birthDateInput && !birthDateInput.value) {
+    const today = new Date().toISOString().split('T')[0];
+    birthDateInput.value = today;
+  }
+}
+
+function showGamePage(){
+  const setupPage = document.getElementById('setup-page');
+  const gamePage = document.getElementById('game-page');
+  if (setupPage) setupPage.classList.add('hide');
+  if (gamePage) gamePage.classList.remove('hide');
+}
+
+function handleSetupSubmit(event){
+  event.preventDefault();
+  event.stopPropagation();
+  
+  try {
+    const formData = new FormData(event.target);
+    const petData = {
+      name: formData.get('pet-name') ? formData.get('pet-name').trim() : '',
+      furColor: 'default',
+      faceColor: 'default',
+      birthDate: formData.get('birth-date') || '',
+      personality: formData.get('pet-personality') ? formData.get('pet-personality').trim() : ''
+    };
+    
+    // Validate required fields
+    if (!petData.name || !petData.birthDate) {
+      alert('Please fill in all required fields (Name and Birth Date)');
+      return;
+    }
+    
+    // Initialize editor options object
+    const editorOptionsSelectedIndex = {};
+    if (typeof editableOptionKeys !== 'undefined' && Array.isArray(editableOptionKeys)) {
+      editableOptionKeys.forEach(k => {
+        editorOptionsSelectedIndex[k] = -1;
+      });
+    }
+    
+    // Save pet setup data
+    const state = {
+      creature: petData,
+      game: { playing: true },
+      ui: { editorOptionsSelectedIndex: editorOptionsSelectedIndex },
+      sound: true
+    };
+    
+    // Color choices are applied in initUI
+    
+    saveState(state);
+    
+    // Reload page to initialize game with new pet
+    window.location.reload();
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    console.error('Error stack:', error.stack);
+    alert('An error occurred: ' + error.message);
+  }
+}
+
+function updatePetNameDisplay(state){
+  if (state.petNameHeaderElement) {
+    state.petNameHeaderElement.textContent = state.creature.name || 'Pet';
+  }
+}
+
+function initSettingsModal(state){
+  const settingsButton = document.getElementById('settings-button');
+  const settingsModal = document.getElementById('settings-modal');
+  const settingsClose = document.getElementById('settings-close');
+  const settingsForm = document.getElementById('settings-form');
+  const restartButton = document.getElementById('restart-button');
+  
+  // Open modal
+  settingsButton.addEventListener('click', () => {
+    // Populate form with current values
+    document.getElementById('settings-pet-name').value = state.creature.name || '';
+    document.getElementById('settings-birth-date').value = state.creature.birthDate || '';
+    document.getElementById('settings-personality').value = state.creature.personality || '';
+    
+    settingsModal.classList.remove('hide');
+  });
+  
+  // Close modal
+  settingsClose.addEventListener('click', () => {
+    settingsModal.classList.add('hide');
+  });
+  
+  // Close modal when clicking outside
+  settingsModal.addEventListener('click', (e) => {
+    if (e.target === settingsModal) {
+      settingsModal.classList.add('hide');
+    }
+  });
+  
+  // Handle form submission
+  settingsForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const petData = {
+      name: formData.get('settings-pet-name') ? formData.get('settings-pet-name').trim() : '',
+      birthDate: formData.get('settings-birth-date') || '',
+      personality: formData.get('settings-personality') ? formData.get('settings-personality').trim() : ''
+    };
+    
+    // Validate required fields
+    if (!petData.name || !petData.birthDate) {
+      alert('Please fill in all required fields (Name and Birth Date)');
+      return;
+    }
+    
+    // Update creature data
+    state.creature.name = petData.name;
+    state.creature.birthDate = petData.birthDate;
+    state.creature.personality = petData.personality;
+    
+    // Update display
+    updatePetNameDisplay(state);
+    
+    // Save state
+    saveState(state);
+    
+    // Close modal
+    settingsModal.classList.add('hide');
+  });
+  
+  // Handle restart button
+  const restartModal = document.getElementById('restart-modal');
+  const restartModalClose = document.getElementById('restart-modal-close');
+  const restartCancel = document.getElementById('restart-cancel');
+  const restartConfirm = document.getElementById('restart-confirm');
+  
+  restartButton.addEventListener('click', () => {
+    restartModal.classList.remove('hide');
+  });
+  
+  // Close restart modal
+  restartModalClose.addEventListener('click', () => {
+    restartModal.classList.add('hide');
+  });
+  
+  restartCancel.addEventListener('click', () => {
+    restartModal.classList.add('hide');
+  });
+  
+  // Close modal when clicking outside
+  restartModal.addEventListener('click', (e) => {
+    if (e.target === restartModal) {
+      restartModal.classList.add('hide');
+    }
+  });
+  
+  // Handle restart confirmation
+  restartConfirm.addEventListener('click', () => {
+    localStorage.removeItem('state');
+    window.location.reload();
+  });
+}
+
 function getState(state){
   return Object.assign({}, state, JSON.parse(localStorage.getItem('state') || '{}'));
 }
 
 function saveState(state){
-  localStorage.setItem('state', JSON.stringify(state));
+  // Create a serializable version of the state
+  const serializableState = {
+    creature: {
+      name: state.creature.name || '',
+      birthDate: state.creature.birthDate || '',
+      personality: state.creature.personality || '',
+      furColor: state.creature.furColor || 'default',
+      faceColor: state.creature.faceColor || 'default',
+      actions: state.creature.actions ? state.creature.actions.map(a => ({
+        type: a.type,
+        start: a.start instanceof Date ? a.start.toISOString() : a.start,
+        duration: a.duration
+      })) : [],
+      moods: state.creature.moods || {},
+      mood: state.creature.mood || 'happy'
+    },
+    game: state.game || { playing: true },
+    ui: state.ui && typeof state.ui.toJSON === 'function' ? state.ui.toJSON() : (state.ui || { editorOptionsSelectedIndex: {} }),
+    sound: state.sound !== undefined ? state.sound : true
+  };
+  
+  // Add resource data only if it exists (not during initial setup)
+  if (state.creature && resourceKeys && typeof resourceKeys !== 'undefined') {
+    resourceKeys.forEach(k => {
+      if (state.creature[k] && typeof state.creature[k] === 'object' && 'min' in state.creature[k]) {
+        serializableState.creature[k] = {
+          min: state.creature[k].min,
+          max: state.creature[k].max,
+          count: state.creature[k].count
+        };
+      }
+    });
+  }
+  
+  localStorage.setItem('state', JSON.stringify(serializableState));
 }
 
-init(getState(STATE));
+// Set up form handler when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('pet-setup-form');
+  if (form) {
+    form.addEventListener('submit', handleSetupSubmit);
+  }
+});
+
+// Also try to set it up immediately if DOM is already loaded
+const form = document.getElementById('pet-setup-form');
+if (form) {
+  form.addEventListener('submit', handleSetupSubmit);
+}
+
+init(STATE);
